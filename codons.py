@@ -1,4 +1,11 @@
 def create_codon_dict(file_path):
-    pass # Replace the pass with your code
+codon_to_amino_acid = {}
+rows = read_file(file_path)
 
+for row in rows:
+    row_list = row.strip().split('\t')
+    codon = row_list[0]
+    amino_acid = row_list[2] # Third cell is the amino acid abbreviation
+    codon_to_amino_acid[codon] = amino_acid
+return codon_to_amino_acid
 
