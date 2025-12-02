@@ -3,7 +3,7 @@ def create_codon_dict(file_path):
     rows = read_file(file_path)
 
     for row in rows:
-        row_list = row.strip().split('\t')
+        row_list = row.strip().split()   
         if len(row_list) < 3:
             continue
         codon = row_list[0]
