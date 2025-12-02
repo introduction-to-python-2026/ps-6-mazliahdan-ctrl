@@ -3,13 +3,8 @@ def create_codon_dict(file_path):
     rows = read_file(file_path)
 
     for row in rows:
-        parts = row.strip().split()  
-        if len(parts) < 3:
-            continue
-
-        codon = parts[0]
-        amino_acid = parts[2]  
-
+        row_list = row.strip().split('\t')
+        codon = row_list[0]
+        amino_acid = row_list[2] # Third cell is the amino acid abbreviation
         codon_to_amino_acid[codon] = amino_acid
-
     return codon_to_amino_acid
